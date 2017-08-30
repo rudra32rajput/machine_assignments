@@ -17,10 +17,14 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-    theta = pinv(X'*X)*X'*y;
+    
+    j_length = length(theta);
+    dcost = zeros(j_length, 1);
+    for j = 1:j_length
+        dcost(j, 1) = sum((X*theta - y).*X(:,j));
+    end
 
-
-
+    theta = theta - (alpha/m)*dcost;
 
 
     % ============================================================
