@@ -105,7 +105,7 @@ fprintf('\n');
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
 price = 0; % You should change this
-
+price = [1 , (1650-mean(X(:, 2)))/std(X(:,2)), (3-mean(X(:, 3)))/std(X(:,3))]*theta;
 
 % ============================================================
 

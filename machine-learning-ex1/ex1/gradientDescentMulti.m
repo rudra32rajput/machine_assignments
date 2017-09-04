@@ -19,12 +19,13 @@ for iter = 1:num_iters
 
 
 
+    j_length = length(theta);
+    dcost = zeros(j_length, 1);
+    for j = 1:j_length
+        dcost(j, 1) = sum((X*theta - y).*X(:,j));
+    end
 
-
-
-
-
-
+    theta = theta - (alpha/m)*dcost;
 
 
     % ============================================================
